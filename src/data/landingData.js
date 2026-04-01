@@ -220,5 +220,14 @@ export const landingData = {
       title: "Hoàn tất hồ sơ",
       description: "Làm theo hướng dẫn để nộp hồ sơ và chính thức trở thành tân sinh viên FPT."
     }
+  ],
+  articles: [
+    {
+      title: "Thông Báo Tuyển Sinh Năm 2026 - FPT Polytechnic Đồng Nai",
+      excerpt: "Trường Cao đẳng FPT Polytechnic cơ sở Đồng Nai chính thức thông báo tuyển sinh năm 2026 với định hướng đào tạo Thực học - Thực nghiệp, cam kết giới thiệu việc làm.",
+      image: "/fpt_recruitment_poster_1774947811802.png",
+      date: "01/04/2026",
+      href: "/tuyen-sinh.html"
+    }
   ]
 };

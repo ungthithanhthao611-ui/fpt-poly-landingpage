@@ -5,16 +5,26 @@ import RegisterForm from './components/home/RegisterForm.vue';
 import WhyChooseSection from './components/home/WhyChooseSection.vue';
 import MajorsSection from './components/home/MajorsSection.vue';
 import CareerSection from './components/home/CareerSection.vue';
+import NewsSection from './components/home/NewsSection.vue';
 import AboutSection from './components/home/AboutSection.vue';
 import PartnerSection from './components/home/PartnerSection.vue';
 import CampusSection from './components/home/CampusSection.vue';
 import AppFooter from './components/AppFooter.vue';
 import BottomActionBar from './components/home/BottomActionBar.vue';
 import RegisterPopup from './components/home/RegisterPopup.vue';
+import ExcelDownloadView from './components/ExcelDownloadView.vue';
+import ImportArticleView from './components/ImportArticleView.vue';
+
+const currentPath = window.location.pathname;
+const isExcelRoute = currentPath === '/excel';
+const isImportRoute = currentPath === '/import';
 </script>
 
 <template>
-  <div class="app-wrapper">
+  <ExcelDownloadView v-if="isExcelRoute" />
+  <ImportArticleView v-else-if="isImportRoute" />
+  
+  <div v-else class="app-wrapper">
     <AppHeader />
     
     <!-- Popup will show after 1s -->
@@ -32,6 +42,8 @@ import RegisterPopup from './components/home/RegisterPopup.vue';
       <MajorsSection />
       
       <CareerSection />
+      
+      <NewsSection />
       
       <AboutSection />
       

@@ -53,6 +53,16 @@ const handleSubmit = () => {
   if (!validateForm()) return;
   isSubmitting.value = true;
   
+  // Lưu vào localStorage
+  const newEntry = {
+    ...form,
+    source: 'Popup',
+    createdAt: new Date().toLocaleString('vi-VN')
+  };
+  const records = JSON.parse(localStorage.getItem('registrations') || '[]');
+  records.push(newEntry);
+  localStorage.setItem('registrations', JSON.stringify(records));
+  
   setTimeout(() => {
     isSubmitting.value = false;
     showSuccess.value = true;
