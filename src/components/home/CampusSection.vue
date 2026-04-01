@@ -46,11 +46,8 @@ import { landingData } from '../../data/landingData';
         </div>
         
         <div class="campus-map animate-fade-in">
-          <div class="map-placeholder">
-            <div class="map-overlay">
-               <p class="map-title">Bản đồ khu vực Hiệp Hòa, Biên Hòa</p>
-               <span>Đang tải dữ liệu Google Maps...</span>
-            </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3401736538617!2d106.8325732248204!3d10.937655789221061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174dffcc5ecddb9%3A0xc8971ea2ed8e08a1!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyBjxqEgc-G7nyDEkOG7k25nIE5haQ!5e0!3m2!1svi!2s!4v1775017771269!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -102,30 +99,22 @@ import { landingData } from '../../data/landingData';
 
 .campus-map { width: 100%; }
 
-.map-placeholder {
+.map-container {
   width: 100%; aspect-ratio: 1 / 1; background-color: #e9ecef;
   border-radius: var(--radius-lg); overflow: hidden; position: relative;
-  background: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url('https://antigravity-images.s3.amazonaws.com/placeholder_fpt_location.jpg') center/cover;
   box-shadow: 0 30px 60px rgba(0,0,0,0.1); border: 4px solid var(--white);
 }
 
-.map-overlay {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  text-align: center; background-color: rgba(255, 255, 255, 0.9);
-  padding: 25px 40px; border-radius: var(--radius-md);
-  box-shadow: var(--shadow); backdrop-filter: blur(5px);
+.map-container iframe {
+  width: 100%; height: 100%; display: block;
 }
-
-.map-title { color: var(--secondary); margin-bottom: 5px; }
-
-.map-overlay span { font-size: 0.8rem; color: var(--text-gray); }
 
 @media (max-width: 768px) {
   .grid-2 { grid-template-columns: 1fr; gap: 50px; }
   .campus-info { order: 1; }
   .campus-map { order: 2; }
   .campus-actions { flex-direction: column; }
-  .map-placeholder { aspect-ratio: 4/3; }
+  .map-container { aspect-ratio: 4/3; }
   .section-title { font-size: 2.2rem; }
 }
 </style>

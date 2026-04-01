@@ -45,14 +45,18 @@ const toggleExpand = (name) => {
           <li v-for="item in landingData.navigation" :key="item.name" class="menu-item" :class="{ 'has-children': item.children }">
             <a :href="item.href" class="menu-link">
               {{ item.name }}
-              <span v-if="item.children" class="arrow">⌄</span>
+              <span v-if="item.children" class="arrow">
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
             </a>
             
             <ul v-if="item.children" class="dropdown-menu level-2">
               <li v-for="child in item.children" :key="child.name" class="dropdown-item" :class="{ 'has-sub': child.children }">
                 <a :href="child.href" class="dropdown-link">
                   {{ child.name }}
-                  <span v-if="child.children" class="sub-arrow">›</span>
+                  <span v-if="child.children" class="sub-arrow">
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L5 5L1 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
                 </a>
                 
                 <ul v-if="child.children" class="dropdown-menu level-3">
@@ -71,12 +75,12 @@ const toggleExpand = (name) => {
       <div class="header-actions">
         <a :href="'tel:' + landingData.college.hotline" class="hotline-link">
           <div class="hotline-info">
-             <span class="hotline-label">Hotline:</span>
-             <span class="hotline-number">{{ landingData.college.hotline }}</span>
+             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hotline-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+             <span class="hotline-text">Hotline: {{ landingData.college.hotline }}</span>
           </div>
         </a>
         
-        <button class="mobile-toggle" @click="toggleMobileMenu">
+        <button :class="['mobile-toggle', { 'open': isMobileMenuOpen }]" @click="toggleMobileMenu">
           <span></span>
           <span></span>
           <span></span>
@@ -84,27 +88,24 @@ const toggleExpand = (name) => {
       </div>
     </div>
 
+    <div v-if="isMobileMenuOpen" class="overlay" @click="toggleMobileMenu"></div>
     <div :class="['mobile-sidebar', { 'active': isMobileMenuOpen }]">
-      <div class="sidebar-header">
-        <img src="/logo.svg" alt="Logo" class="sidebar-logo" />
-        <button class="close-sidebar" @click="toggleMobileMenu">✕</button>
-      </div>
       <div class="sidebar-body">
         <ul class="mobile-nav">
           <li v-for="item in landingData.navigation" :key="item.name" class="mobile-menu-item">
             <div class="mobile-link-row">
-              <a :href="item.href" class="mobile-menu-link" @click="toggleMobileMenu">{{ item.name }}</a>
-              <button v-if="item.children" class="expand-btn" @click="toggleExpand(item.name)">
-                {{ expandedItems.includes(item.name) ? '−' : '+' }}
+              <a :href="item.href" class="mobile-menu-link" @click="!item.children ? toggleMobileMenu() : toggleExpand(item.name)">{{ item.name }}</a>
+              <button v-if="item.children" class="expand-btn" @click="toggleExpand(item.name)" :class="{ 'expanded': expandedItems.includes(item.name) }">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
             </div>
             
             <ul v-if="item.children && expandedItems.includes(item.name)" class="mobile-sub-nav">
               <li v-for="child in item.children" :key="child.name">
                 <div class="mobile-link-row">
-                  <a :href="child.href" @click="toggleMobileMenu">{{ child.name }}</a>
-                  <button v-if="child.children" class="expand-btn sub-expand" @click="toggleExpand(child.name)">
-                    {{ expandedItems.includes(child.name) ? '−' : '+' }}
+                  <a :href="child.href" @click="!child.children ? toggleMobileMenu() : toggleExpand(child.name)">{{ child.name }}</a>
+                  <button v-if="child.children" class="expand-btn sub-expand" @click="toggleExpand(child.name)" :class="{ 'expanded': expandedItems.includes(child.name) }">
+                    <svg width="10" height="6" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
                 </div>
                 
@@ -116,13 +117,16 @@ const toggleExpand = (name) => {
               </li>
             </ul>
           </li>
+          
+          <li class="mobile-menu-item item-hotline">
+            <a :href="'tel:' + landingData.college.hotline" class="mobile-hotline-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hotline-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              Hotline: {{ landingData.college.hotline }}
+            </a>
+          </li>
         </ul>
       </div>
-      <div class="sidebar-footer">
-        <a :href="'tel:' + landingData.college.hotline" class="btn-main-orange w-100">GỌI HOTLINE</a>
-      </div>
     </div>
-    <div v-if="isMobileMenuOpen" class="overlay" @click="toggleMobileMenu"></div>
   </header>
 </template>
 
@@ -141,22 +145,22 @@ const toggleExpand = (name) => {
 
 .nav-desktop { flex: 1; display: flex; justify-content: center; }
 
-.main-menu { display: flex; gap: 12px; list-style: none; flex-wrap: nowrap; }
+.main-menu { display: flex; gap: 14px; list-style: none; flex-wrap: nowrap; }
 
 .menu-item { position: relative; height: 90px; display: flex; align-items: center; }
 .scrolled .menu-item { height: 75px; }
 
 .menu-link {
-  font-size: 0.85rem; font-weight: 700; color: #222; white-space: nowrap;
-  display: flex; align-items: center; gap: 3px; transition: 0.2s;
+  font-size: 0.85rem; font-weight: 600; color: #333; white-space: nowrap;
+  display: flex; align-items: center; gap: 4px; transition: 0.2s;
   font-family: var(--font-main);
 }
 
 .menu-link:hover { color: #f26c21; }
 
 .dropdown-menu {
-  position: absolute; background: white; min-width: 260px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-  opacity: 0; visibility: hidden; transition: all 0.25s ease; padding: 10px 0; z-index: 10;
+  position: absolute; background: white; min-width: 240px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  opacity: 0; visibility: hidden; transition: all 0.25s ease; padding: 8px 0; z-index: 10;
 }
 
 .level-2 { top: 100%; left: 0; border-radius: 0 0 10px 10px; transform: translateY(10px); border-top: 3px solid #f26c21; }
@@ -167,80 +171,95 @@ const toggleExpand = (name) => {
 .dropdown-item:hover > .level-3 { opacity: 1; visibility: visible; transform: translateX(0); }
 
 .dropdown-link {
-  display: flex; justify-content: space-between; align-items: center; padding: 12px 20px;
-  font-size: 0.88rem; font-weight: 700; color: #333; transition: 0.2s; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; padding: 8px 20px;
+  font-size: 0.85rem; font-weight: 500; color: #444; transition: 0.2s; cursor: pointer;
   font-family: var(--font-main);
 }
 
-.dropdown-item:hover > .dropdown-link { background-color: #f26c21; color: white; }
+.dropdown-item:hover > .dropdown-link { color: #f26c21; background-color: #fcfcfc; }
 
 .header-actions { display: flex; align-items: center; gap: 15px; }
+
+.hotline-link {
+  text-decoration: none;
+}
 
 .hotline-info {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: #f8f9fa;
-  padding: 8px 15px;
-  border-radius: 30px;
-  border: 1px solid #eee;
+  gap: 6px;
+  color: #f26c21;
   transition: 0.3s;
+  flex-shrink: 0;
 }
 
 .hotline-info:hover {
-  background-color: #fff4ec;
-  border-color: #f26c21;
-  box-shadow: 0 5px 15px rgba(242, 108, 33, 0.1);
+  opacity: 0.8;
 }
 
-.hotline-label {
-  font-size: 0.85rem;
-  color: #666;
-  font-weight: 700;
-}
-
-.hotline-number { 
-  font-size: 1.1rem; 
-  font-weight: 950; 
-  color: #f26c21; 
-  font-family: var(--font-main); 
+.hotline-text {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-main);
   white-space: nowrap;
 }
 
-.mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
-.mobile-toggle span { width: 25px; height: 2px; background: #222; }
+.mobile-toggle { 
+  display: none; flex-direction: column; gap: 6px; 
+  background: none; border: none; cursor: pointer; padding: 5px; 
+  position: relative; z-index: 4000;
+}
+.mobile-toggle span { 
+  width: 28px; height: 3px; background: #666; border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); background: #ffffff; }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background: #ffffff; }
+
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2500; }
 
 .mobile-sidebar {
-  position: fixed; top: 0; right: -100%; width: 100%; max-width: 320px; height: 100vh;
+  position: fixed; top: 0; left: -100%; width: 80%; max-width: 340px; height: 100vh;
   background: white; z-index: 3000; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex; flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  display: flex; flex-direction: column; box-shadow: 10px 0 30px rgba(0,0,0,0.1); overflow: visible;
 }
 
-.mobile-sidebar.active { right: 0; }
-.sidebar-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; }
-.sidebar-logo { height: 38px; }
-.sidebar-body { flex: 1; overflow-y: auto; padding: 10px 20px; }
+.mobile-sidebar.active { left: 0; }
+
+.sidebar-body { flex: 1; overflow-y: auto; padding: 30px 25px; }
 .mobile-nav { list-style: none; padding: 0; }
-.mobile-menu-item { border-bottom: 1px solid #f8f9fa; }
+.mobile-menu-item { border-bottom: 0px solid transparent; }
 .mobile-link-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.mobile-menu-link { display: block; padding: 14px 0; font-weight: 700; color: #222; font-size: 1rem; font-family: var(--font-main); }
+
+.mobile-menu-link { 
+  display: block; padding: 15px 0; font-weight: 500; color: #333; 
+  font-size: 0.95rem; font-family: var(--font-main); flex: 1;
+}
 
 .expand-btn {
-  background: #f8f9fa; width: 34px; height: 34px; border-radius: 6px; font-weight: 800;
-  border: none; display: flex; align-items: center; justify-content: center; color: #f26c21; transition: 0.2s;
+  background: transparent; width: 40px; height: 40px; border-radius: 6px;
+  border: none; display: flex; align-items: center; justify-content: center; 
+  color: #666; transition: 0.3s; cursor: pointer;
 }
+.expand-btn.expanded { transform: rotate(180deg); color: #f26c21; }
 
-.mobile-sub-nav { padding-left: 20px; list-style: none; }
-.mobile-sub-nav li { border-top: 1px solid #f9f9f9; }
-.mobile-sub-nav a { display: block; padding: 12px 0; font-size: 0.9rem; color: #444; font-weight: 600; font-family: var(--font-main); }
+.mobile-sub-nav { padding-left: 0; list-style: none; }
+.mobile-sub-nav li { border-top: 0; }
+.mobile-sub-nav a { display: block; padding: 12px 15px; font-size: 0.9rem; color: #555; font-weight: 400; font-family: var(--font-main); }
 
-.btn-main-orange {
-  background: linear-gradient(180deg, #f26c21 0%, #e05b1b 100%); color: white;
-  padding: 14px; text-align: center; border-radius: 10px; font-weight: 800; display: block;
+.item-hotline { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+.mobile-hotline-link {
+  display: flex; align-items: center; gap: 8px; color: #f26c21;
+  font-weight: 600; font-size: 1.05rem; padding: 10px 0;
+  text-decoration: none; font-family: var(--font-main);
 }
-
-.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2500; }
 
 @media (max-width: 1200px) { .main-menu { gap: 8px; } .menu-link { font-size: 0.8rem; } }
-@media (max-width: 1024px) { .nav-desktop { display: none; } .mobile-toggle { display: flex; } }
+@media (max-width: 1024px) { 
+  .nav-desktop { display: none; } 
+  .mobile-toggle { display: flex; } 
+  .hotline-link { display: none; }
+}
 </style>

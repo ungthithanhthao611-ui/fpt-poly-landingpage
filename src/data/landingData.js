@@ -113,8 +113,10 @@ export const landingData = {
       name: "Tuyển dụng", 
       href: "#",
       children: [
-        { name: "Việc làm sinh viên", href: "#" },
-        { name: "Hợp tác doanh nghiệp", href: "#" }
+        { name: "TUYỂN DỤNG GIẢNG VIÊN ", href: "#" },
+        { name: "Làm việc và thực tập", href: "#" },
+        { name: "Doanh nghiệp nhà tuyển dụng", href: "#" },
+        { name: "Doanh nghiệp hợp tác", href: "#" }
       ]
     },
     { 

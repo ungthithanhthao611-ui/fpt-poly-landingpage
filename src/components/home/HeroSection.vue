@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const slides = [
-  { img: '/8c2a75c51d599307ca48.jpg', link: '#register' },
+  { img: '/z7679352908444_4b35037e04dd87d5134a62b3c3ea534b.jpg', link: '#register' },
   { img: '/hero-img1.png', link: 'https://caodang.fpt.edu.vn/' }
 ];
 
@@ -63,25 +63,38 @@ onUnmounted(() => {
   position: relative;
   width: 100%;
   margin-top: 90px; /* Base header height */
-  overflow: hidden;
   background: white;
 }
 
 .slider-container {
   position: relative;
   width: 100%;
+  background: #d8f1ff; /* Fallback light blue color matching sky */
+  overflow: hidden;
 }
 
 .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  display: none;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .slide.active {
-  display: block;
+  position: relative;
   opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .bg-img {
