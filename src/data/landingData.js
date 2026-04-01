@@ -57,46 +57,23 @@ export const landingData = {
           name: "Công nghệ thông tin", 
           href: "#",
           children: [
-            { name: "Lập trình Web", href: "#" },
-            { name: "Lập trình Mobile", href: "#" },
-            { name: "Lập trình Game", href: "#" },
             { name: "Phát triển phần mềm", href: "#" },
-            { name: "Lập trình ứng dụng Trí tuệ nhân tạo (AI)", href: "#" },
+            { name: "Lập trình web", href: "#" },
             { name: "Ứng dụng phần mềm", href: "#" }
           ]
         },
-        { 
+        { name: "Thiết kế đồ họa", href: "#" },
+         { 
           name: "Quản trị kinh doanh", 
           href: "#",
           children: [
             { name: "Digital Marketing", href: "#" },
-            { name: "Marketing & Sales", href: "#" },
-            { name: "Truyền thông & Tổ chức sự kiện", href: "#" },
-            { name: "Quản trị dịch vụ du lịch và lữ hành", href: "#" },
-            { name: "Quản trị Khách sạn Nhà hàng", href: "#" },
+            { name: "Tổ chức sự kiện", href: "#" },
             { name: "Quản lý vận tải và dịch vụ logistics", href: "#" }
           ]
         },
-        { name: "Thiết kế đồ họa", href: "#" },
-        { name: "Xử lý dữ liệu", href: "#" },
-        { name: "Công nghệ kỹ thuật cơ khí", href: "#" },
-        { 
-          name: "Công nghệ Kỹ thuật điều khiển & Tự động hoá", 
-          href: "#",
-          children: [
-            { name: "Công nghệ kỹ thuật điện, điện tử", href: "#" },
-            { name: "CN kỹ thuật điều khiển & tự động hoá", href: "#" },
-            { name: "Công nghệ Chip & Bán dẫn", href: "#" }
-          ]
-        },
-        { name: "Công nghệ kỹ thuật ô tô (dự kiến)", href: "#" },
-        { name: "Kế toán doanh nghiệp (dự kiến)", href: "#" },
-        { name: "Tiếng Trung Quốc", href: "#" },
-        { name: "Tiếng Hàn Quốc", href: "#" },
-        { name: "Tiếng Anh", href: "#" },
-        { name: "Tiếng Nhật", href: "#" },
-        { name: "Dược", href: "#" },
-        { name: "Chăm sóc sắc đẹp (dự kiến)", href: "#" }
+     
+        { name: "Tiếng Trung Quốc", href: "#" }
       ]
     },
     { 
