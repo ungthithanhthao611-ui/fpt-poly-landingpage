@@ -8,40 +8,36 @@ const careers = [
     color: "#00adef",
     image: "/career-img1.png",
     points: [
-      "Lập trình viên Game (Game Developer)",
-      "Thiết kế đồ họa Game (Game Artist)",
-      "Chuyên viên IT của doanh nghiệp",
-      "Quản trị dự án CNTT",
-      "Kỹ sư học máy (Machine Learning Engineer)",
-      "Lập trình viên AI (AI Developer)",
       "Chuyên viên phát triển/Lập trình Website",
-      "Chuyên viên Quản trị Website và Thương mại điện tử"
+      "Kỹ sư phần mềm (Software Engineer)",
+      "Lập trình viên (Developer)",
+      "Quản trị dự án CNTT",
+      "Chuyên viên kiểm thử phần mềm (Tester)",
+      "Quản trị hệ thống, dữ liệu",
     ]
   },
   {
     id: 2,
     title: "QUẢN TRỊ KINH DOANH",
     color: "#f26c21",
-    image: "/career-img2.png",
+    image: "https://caodang.fpt.edu.vn/wp-content/themes/fpoly/assets/standalone/images/career-img2.png",
     points: [
-      "Chuyên viên sự kiện (Account)",
+      "Chuyên viên Digital Marketing, PR",
       "Chuyên viên tổ chức sự kiện (Event Executive)",
-      "Chuyên viên kinh doanh sự kiện (Sales)",
       "Chuyên viên điều phối sự kiện (Event Coordinator)",
-      "Nhân viên bán hàng và dịch vụ chăm sóc khách hàng",
-      "Nhân viên quảng cáo, tổ chức sự kiện và quan hệ công chúng (PR)",
-      "Chuyên viên PR & Marketing online",
-      "Chuyên viên Chăm sóc khách hàng"
+      "Nhân viên quản lý kho bãi, điều phối vận tải",
+      "Chuyên viên thu mua, quản lý đơn hàng",
+      "Nhân viên xuất nhập khẩu, thực hiện thủ tục hải quan",
     ]
   },
   {
     id: 3,
     title: "THIẾT KẾ ĐỒ HỌA",
-    color: "#f26c21",
+    color: "#00adef",
     image: "/career-img3.png",
     points: [
       "Chuyên viên thiết kế đồ họa 2D, 3D",
-      "Chuyên viên thiết kế dàn trang, chế bản điện tử, thiết kế in ấn, biên tập ảnh số",
+      "Chuyên viên thiết kế dàn trang, chế bản điện tử, biên tập ảnh số",
       "Chuyên viên thiết kế giao diện cho Website",
       "Chuyên viên thiết kế quảng cáo, marketing",
       "Chuyên viên xử lý ảnh làm việc tại các studio",
@@ -50,42 +46,16 @@ const careers = [
   },
   {
     id: 4,
-    title: "CÔNG NGHỆ KỸ THUẬT ĐIỀU KHIỂN & TỰ ĐỘNG HOÁ",
-    color: "#f26c21",
-    image: "/8c2a75c51d599307ca48.jpg",
-    points: [
-        "Chuyên viên kỹ thuật tại các nhà máy chế tạo, lắp ráp sản phẩm điện tử",
-        "Chuyên viên thiết kế, lắp đặt, vận hành, bảo dưỡng hệ thống điều khiển và tự động hóa",
-        "Chuyên viên lập trình, mô phỏng hệ thống điều khiển và tự động hóa",
-        "Chuyên viên lập trình điều khiển robot công nghiệp",
-        "Lắp ráp - sửa chữa thiết bị điện tử",
-        "Kỹ thuật viên đóng gói và kiểm tra vi mạch (Back-End Process)"
-    ]
-  },
-  {
-    id: 5,
-    title: "LOGISTICS & QUẢN LÝ CHUỖI CUNG ỨNG",
-    color: "#00adef",
-    image: "/career-img4.png",
-    points: [
-        "Nhân viên quản lý kho bãi, điều phối vận tải",
-        "Chuyên viên thu mua, quản lý đơn hàng",
-        "Nhân viên xuất nhập khẩu, thực hiện thủ tục hải quan",
-        "Chuyên viên phân tích chuỗi cung ứng",
-        "Quản lý vận hành tại các trung tâm phân phối thương mại điện tử"
-    ]
-  },
-  {
-    id: 6,
-    title: "HỌC BỔNG POLY NEXT SCHOLAR",
+    title: "TIẾNG TRUNG QUỐC",
     color: "#f26c21",
     image: "/career-img5.png",
     points: [
-        "Học bổng dành cho Thế hệ mới",
-        "Hơn 2,000 suất học bổng toàn quốc tại FPT Polytechnic",
-        "Tổng trị giá quỹ học bổng lên đến 48 TỶ ĐỒNG",
-        "Cơ hội nhận học bổng 25%, 50%, 75% học phí toàn khóa",
-        "Ưu tiên cho thí sinh đăng ký xét tuyển sớm"
+      "Phiên dịch viên tiếng Trung tại các doanh nghiệp",
+      "Nhân viên văn phòng, trợ lý, thư ký giám đốc",
+      "Nhân viên xuất nhập khẩu, giao dịch thương mại",
+      "Nhân viên bộ phận nhân sự (HR) giỏi tiếng Trung",
+      "Hướng dẫn viên du lịch, điều hành tour",
+      "Giảng dạy tiếng Trung tại các trung tâm ngoại ngữ"
     ]
   }
 ];

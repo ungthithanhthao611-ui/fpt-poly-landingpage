@@ -3,7 +3,7 @@ export const landingData = {
     name: "FPT Polytechnic Đồng Nai",
     fullName: "Cao đẳng FPT Polytechnic Đồng Nai",
     slogan: "Thực học – Thực nghiệp",
-    hotline: "0345 690 031",
+    hotline: "0989.871.031",
     email: "caodangfpt.dongnai@fpt.edu.vn",
     address: "193 Đỗ Văn Thi, phường Hiệp Hòa, TP Biên Hòa, Đồng Nai",
     website: "https://caodang.fpt.edu.vn"

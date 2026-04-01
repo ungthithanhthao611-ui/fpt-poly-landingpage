@@ -3,62 +3,13 @@ const currentYear = new Date().getFullYear();
 
 const campuses = [
   {
-    name: 'Cơ sở Hà Nội',
-    address: 'Cổng số 1, Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội',
-    hotline: '024 8589 6969'
-  },
-  {
-    name: 'Cơ sở TP Hồ Chí Minh',
-    address: 'Tòa nhà FPT Polytechnic, 391A Nam Kỳ Khởi Nghĩa, Quận 3, TP HCM',
-    hotline: '028 3526 8799'
-  },
-  {
-    name: 'Cơ sở Thái Nguyên',
-    address: 'Tòa nhà Viettel, số 525 Lương Ngọc Quyến, Phường Phan Đình Phùng, Thái Nguyên',
-    hotline: '0981 725 836'
-  },
-  {
-    name: 'Cơ sở Đà Nẵng',
-    address: '137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP Đà Nẵng',
-    hotline: '(0236) 371 0999'
-  },
-  {
-    name: 'Cơ sở Hải Phòng',
-    address: '271 Lê Thánh Tông, Phường Máy Chai, Quận Ngô Quyền, TP Hải Phòng',
-    hotline: '(0225) 355 1068'
-  },
-  {
-    name: 'Cơ sở Quy Nhơn',
-    address: '52 Mai Xuân Thưởng, Phường Lý Thường Kiệt, TP Quy Nhơn, Tỉnh Bình Định',
-    hotline: '(0256) 625 4555'
-  },
-  {
-    name: 'Cơ sở Hà Nam',
-    address: 'Số 422, Tổ dân phố 8, Phường Ba Sao, Kim Bảng, Hà Nam',
-    hotline: '0345 690 031'
-  },
-  {
-    name: 'Cơ sở Tây Nguyên',
-    address: 'Số 27 Nguyễn Tất Thành, phường Tân Lợi, TP Buôn Ma Thuột, Đắk Lắk',
-    hotline: '(0262) 355 5678'
-  },
-  {
-    name: 'Cơ sở Thanh Hóa',
-    address: 'Lô số 11, Khu đô thị mới Nam thành phố Thanh Hóa, Phường Đông Vệ, TP Thanh Hóa',
-    hotline: '0237 845 9999'
-  },
-  {
     name: 'Cơ sở Đồng Nai',
     highlight: true,
     address: 'Số 193 Đỗ Văn Thi, phường Hiệp Hòa, TP Biên Hòa, tỉnh Đồng Nai',
-    hotline: '0345 690 031',
+    hotline: '0989.871.031',
     website: 'www.fpt.edu.vn'
-  },
-  {
-    name: 'Cơ sở Cần Thơ',
-    address: 'Số 288 Nguyễn Văn Linh, phường An Khánh, quận Ninh Kiều, TP Cần Thơ',
-    hotline: '(0292) 373 5959'
   }
+
 ];
 </script>
 
@@ -73,7 +24,7 @@ const campuses = [
              <span class="icon">📧</span> caodang@fpt.edu.vn
           </div>
           <div class="contact-item">
-             <span class="icon">📞</span> 0345 690 031
+             <span class="icon">📞</span> 0989.871.031
           </div>
         </div>
 
@@ -111,7 +62,7 @@ const campuses = [
 .footer-brand { flex: 0 0 280px; }
 
 .footer-logo {
-  height: 55px; filter: brightness(0) invert(1); margin-bottom: 40px;
+  height: 55px; margin-bottom: 40px;
 }
 
 .contact-title {

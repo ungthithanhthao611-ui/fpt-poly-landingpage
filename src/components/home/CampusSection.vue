@@ -41,7 +41,7 @@ import { landingData } from '../../data/landingData';
           
           <div class="campus-actions">
             <a :href="`tel:${landingData.college.hotline.replace(/\s/g, '')}`" class="btn btn-primary">Gọi ngay tư vấn</a>
-            <a href="https://maps.app.goo.gl/uXvL8e4m8x8j8e8j8" target="_blank" class="btn btn-secondary">Xem bản đồ</a>
+            <a href="https://maps.app.goo.gl/uXvL8e4m8x8j8e8j8" target="_blank" class="btn btn-secondary"></a>
           </div>
         </div>
         

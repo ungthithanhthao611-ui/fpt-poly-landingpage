@@ -6,19 +6,19 @@ const showSuccess = ref(false);
 const isSubmitting = ref(false);
 
 const campusOptions = [
-  { label: 'Chọn Cơ sở', value: '' },
   { label: 'Đồng Nai', value: 'dongnai' },
-  { label: 'TP. Hồ Chí Minh', value: 'hcm' },
-  { label: 'Hà Nội', value: 'hanoi' },
 ];
 
 const majorOptions = [
   { label: 'Chọn Ngành học', value: '' },
-  { label: 'Lập trình Web', value: 'lap-trinh-web' },
-  { label: 'Digital Marketing', value: 'digital-marketing' },
   { label: 'Thiết kế đồ họa', value: 'thiet-ke-do-hoa' },
-  { label: 'Quản trị khách sạn', value: 'quan-tri-khach-san' },
-  { label: 'Logistics', value: 'logistics' },
+  { label: 'Tiếng Trung Quốc', value: 'tieng-trung-quoc' },
+  { label: 'Digital Marketing', value: 'digital-marketing' },
+  { label: 'Truyền thông và Tổ chức sự kiện', value: 'truyen-thong-su-kien' },
+  { label: 'Quản lý vận tải và dịch vụ logistics', value: 'logistics' },
+  { label: 'Phát triển phần mềm', value: 'phat-trien-phan-mem' },
+  { label: 'Ứng dụng phần mềm', value: 'ung-dung-phan-mem' },
+  { label: 'Lập trình Web', value: 'lap-trinh-web' },
 ];
 
 const form = reactive({
@@ -90,10 +90,6 @@ onMounted(() => {
           <!-- Left side: Image -->
           <div class="popup-image">
              <img src="/fpt_recruitment_poster_1774947811802.png" alt="Recruitment" />
-             <div class="image-overlay">
-                <h3>TUYỂN SINH 2026</h3>
-                <p>CƠ SỞ ĐỒNG NAI</p>
-             </div>
           </div>
 
           <!-- Right side: Form -->
@@ -126,10 +122,7 @@ onMounted(() => {
 
               <div class="input-group">
                 <label>Cơ sở học *</label>
-                <select v-model="form.campus">
-                  <option v-for="opt in campusOptions" :key="opt.value" :value="opt.value">
-                    {{ opt.label }}
-                  </option>
+                <select v-model="form.campus" disabled class="disabled-select">
                 </select>
               </div>
 
@@ -170,7 +163,7 @@ onMounted(() => {
 .popup-container {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   background: white;
   border-radius: 20px;
   overflow: hidden;
@@ -204,31 +197,27 @@ onMounted(() => {
 
 .popup-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 55% 45%;
 }
 
 .popup-image {
   position: relative;
   height: 100%;
   min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .popup-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-.image-overlay {
-  position: absolute;
-  bottom: 0; left: 0; width: 100%;
-  padding: 30px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: white;
-}
 
-.image-overlay h3 { font-size: 1.8rem; font-weight: 950; margin: 0; }
-.image-overlay p { font-size: 1.1rem; opacity: 0.9; margin: 5px 0 0 0; }
 
 .popup-form-side {
   padding: 40px;
@@ -260,6 +249,16 @@ onMounted(() => {
 }
 
 .input-group input:focus, .input-group select:focus { border-color: #f26c21; }
+
+.disabled-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  background-color: #fafafa;
+  color: #555;
+  cursor: default;
+}
 
 .err { color: #dc3545; font-size: 0.75rem; margin-top: 3px; font-weight: 600; }
 

@@ -2,36 +2,26 @@
 import { computed, reactive, ref } from 'vue';
 
 const campusOptions = [
-  { label: 'Chọn Cơ sở', value: '' },
   { label: 'Đồng Nai', value: 'dongnai' },
-  { label: 'TP. Hồ Chí Minh', value: 'hcm' },
-  { label: 'Hà Nội', value: 'hanoi' },
-  { label: 'Đà Nẵng', value: 'danang' },
-  { label: 'Cần Thơ', value: 'cantho' },
 ];
 
 const majorOptions = [
   { label: 'Chọn Ngành học', value: '' },
-  { label: 'Lập trình Web', value: 'lap-trinh-web' },
-  { label: 'Lập trình Mobile', value: 'lap-trinh-mobile' },
-  { label: 'Ứng dụng phần mềm', value: 'ung-dung-phan-mem' },
-  { label: 'Digital Marketing', value: 'digital-marketing' },
-  { label: 'Marketing và Bán hàng', value: 'marketing-ban-hang' },
-  { label: 'Truyền thông và Tổ chức sự kiện', value: 'truyen-thong-su-kien' },
   { label: 'Thiết kế đồ họa', value: 'thiet-ke-do-hoa' },
-  { label: 'Quản trị khách sạn', value: 'quan-tri-khach-san' },
-  { label: 'Quản trị dịch vụ du lịch và lữ hành', value: 'du-lich-lu-hanh' },
-  { label: 'Công nghệ kỹ thuật điện, điện tử', value: 'dien-dien-tu' },
-  { label: 'Công nghệ kỹ thuật điều khiển và tự động hoá', value: 'tu-dong-hoa' },
-  { label: 'Công nghệ Chip và Bán dẫn', value: 'chip-ban-dan' },
-  { label: 'Công nghệ kỹ thuật cơ khí', value: 'co-khi' },
+  { label: 'Tiếng Trung Quốc', value: 'tieng-trung-quoc' },
+  { label: 'Digital Marketing', value: 'digital-marketing' },
+  { label: 'Truyền thông và Tổ chức sự kiện', value: 'truyen-thong-su-kien' },
+  { label: 'Quản lý vận tải và dịch vụ logistics', value: 'logistics' },
+  { label: 'Phát triển phần mềm', value: 'phat-trien-phan-mem' },
+  { label: 'Ứng dụng phần mềm', value: 'ung-dung-phan-mem' },
+  { label: 'Lập trình Web', value: 'lap-trinh-web' },
 ];
 
 const form = reactive({
   name: '',
   phone: '',
   email: '',
-  campus: '',
+  campus: 'dongnai',
   major: '',
   facebook: '',
 });
@@ -167,8 +157,8 @@ const submitText = computed(() =>
 
             <div class="form-group">
               <label class="form-label">Cơ sở <span>*</span></label>
-              <div class="select-wrap">
-                <select v-model="form.campus" class="form-control form-select">
+              <div class="select-wrap disabled-wrap">
+                <select v-model="form.campus" class="form-control form-select" disabled>
                   <option v-for="option in campusOptions" :key="option.value" :value="option.value" :disabled="option.value === ''">
                     {{ option.label }}
                   </option>
@@ -289,6 +279,8 @@ const submitText = computed(() =>
 .form-label span { color: #f26c21; }
 
 .form-control {
+  width: 100%;
+  display: block;
   height: 52px;
   padding: 0 16px;
   border: 1.5px solid #e0e0e0;
@@ -301,12 +293,9 @@ const submitText = computed(() =>
 .form-control:focus { border-color: #f26c21; box-shadow: 0 0 0 4px rgba(242, 108, 33, 0.1); }
 
 .select-wrap { position: relative; }
-.select-wrap::after {
-  content: '⌄'; position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
-  pointer-events: none; font-size: 1.2rem; color: #999;
-}
 
-.form-select { appearance: none; cursor: pointer; }
+.form-select { cursor: pointer; }
+.form-select:disabled { cursor: default; background-color: #fafafa; color: #555; }
 
 .form-consent { margin-top: 30px; font-size: 0.85rem; color: #888; line-height: 1.6; font-style: italic; }
 

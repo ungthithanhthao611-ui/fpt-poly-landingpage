@@ -12,8 +12,6 @@ const majorsList = [
     items: [
       'Phát triển phần mềm', 
       'Lập trình Web', 
-      'Lập trình Game', 
-      'Lập trình ứng dụng Trí tuệ nhân tạo (AI)', 
       'Ứng dụng phần mềm'
     ]
   },
@@ -21,59 +19,34 @@ const majorsList = [
     id: 2, 
     name: 'Quản trị kinh doanh', 
     subtitle: 'Làm chủ các kỹ năng quản trị, marketing, và vận hành doanh nghiệp trong kỷ nguyên số.',
-    img: '/program-img2.png',
+    img: 'https://caodang.fpt.edu.vn/wp-content/themes/fpoly/assets/standalone/images/program-img3.png',
     items: [
       'Digital Marketing', 
-      'Marketing & Sales', 
-      'Truyền thông & Tổ chức sự kiện', 
-      'Quản trị dịch vụ du lịch và lữ hành', 
+      'Tổ chức sự kiện', 
       'Quản lý vận tải và dịch vụ logistics'
     ]
   },
   { 
     id: 3, 
-    name: 'Công nghệ kỹ thuật điện-tử', 
-    subtitle: 'Nghiên cứu về các hệ thống điện dân dụng và công nghiệp, điều khiển tự động hóa.',
-    img: '/program-img3.png',
+    name: 'Thiết kế đồ họa', 
+    subtitle: 'Sáng tạo không giới hạn với tư duy thẩm mỹ và kỹ năng sử dụng công cụ thiết kế chuyên sâu.',
+    img: 'https://caodang.fpt.edu.vn/wp-content/themes/fpoly/assets/standalone/images/program-img6.png',
     items: [
-      'Vận hành hệ thống điện',
-      'Sửa chữa thiết bị điện',
-      'Điều khiển tự động',
-      'Công nghệ Chip & Bán dẫn'
+      'Thiết kế đồ họa 2D, 3D',
+      'Thiết kế giao diện Website',
+      'Xử lý ảnh tại các studio',
+      'Thiết kế quảng cáo, marketing'
     ]
   },
   { 
     id: 4, 
-    name: 'Chăm sóc sức khoẻ và làm đẹp', 
-    subtitle: 'Đào tạo chuyên sâu về kỹ thuật thẩm mỹ, chăm sóc da và quản lý cơ sở spa chuyên nghiệp.',
-    img: '/program-img4.png',
-    items: [
-      'Phun thêu thẩm mỹ',
-      'Chăm sóc da mặt',
-      'Nối mi nghệ thuật',
-      'Quản lý cơ sở thẩm mỹ'
-    ]
-  },
-  { 
-    id: 5, 
-    name: 'Ngôn ngữ', 
-    subtitle: 'Trang bị nền tảng ngôn ngữ và văn hóa vững chắc để làm việc tại các công ty đa quốc gia.',
+    name: 'Tiếng Trung Quốc', 
+    subtitle: 'Trang bị nền tảng ngôn ngữ và văn hóa vững chắc để làm việc tại các doanh nghiệp đa quốc gia.',
     img: '/program-img5.png',
     items: [
-      'Tiếng Anh giao tiếp',
-      'Tiếng Hàn Quốc',
-      'Tiếng Nhật chuyên ngành'
-    ]
-  },
-  { 
-    id: 6, 
-    name: 'Ngành khác', 
-    subtitle: 'Các ngành học xu hướng, đáp ứng nhu cầu tuyển dụng thực tế của doanh nghiệp.',
-    img: '/program-img6.png',
-    items: [
-      'Thiết kế đồ họa',
-      'Dược',
-      'Kế toán doanh nghiệp'
+      'Tiếng Trung giao tiếp',
+      'Biên phiên dịch tiếng Trung',
+      'Văn hóa doanh nghiệp Trung Quốc'
     ]
   }
 ];
